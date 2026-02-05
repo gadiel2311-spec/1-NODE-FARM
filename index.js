@@ -13,6 +13,16 @@ fs.readFile("./txt/start.txt", "utf-8", (_err, _data1) => {
     console.log(_data2);
     fs.readFile(`./txt/append.txt`, "utf-8", (_err, _data3) => {
       console.log(_data3);
+
+      fs.writeFile(
+        "./txt/final.txt",
+        `${_data2}\n${_data3}`,
+        "utf-8",
+        (err) => {
+          console.log("Your file has been written 😁");
+          //
+        },
+      );
     });
   });
 });
